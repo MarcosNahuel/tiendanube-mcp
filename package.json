@@ -1,5 +1,5 @@
 {
-  "name": "@traid/tiendanube-mcp",
+  "name": "@nahuelalbornoz/tiendanube-mcp",
   "version": "1.0.0",
   "description": "MCP server completo para Tienda Nube (Nuvemshop) — 13 tools de seller operations con write-back (update_product, update_order_status, create_coupon).",
   "license": "MIT",
