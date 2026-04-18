@@ -1,0 +1,51 @@
+{
+  "qualifiedName": "@traid/tiendanube-mcp",
+  "displayName": "Tienda Nube / Nuvemshop MCP Server",
+  "description": "Complete MCP server for Tienda Nube (Argentina) and Nuvemshop (Brazil) seller operations — 13 tools for products, orders, customers, categories, coupons, and webhooks with write-back",
+  "homepage": "https://github.com/MarcosNahuel/tiendanube-mcp",
+  "iconUrl": "https://d26lpennugtm8s.cloudfront.net/stores/001/057/628/themes/common/logo-2063726756-1737744095-12cca7a3074d80a234f2ea87b0f5f0d91737744096.png",
+  "connections": [
+    {
+      "type": "stdio",
+      "configSchema": {
+        "type": "object",
+        "properties": {
+          "TN_STORE_ID": {
+            "type": "string",
+            "description": "Store ID (user_id returned by /apps/authorize/token)"
+          },
+          "TN_ACCESS_TOKEN": {
+            "type": "string",
+            "description": "OAuth access token (does not expire)"
+          },
+          "TN_APP_NAME": {
+            "type": "string",
+            "description": "App name for User-Agent header",
+            "default": "traid-mcp"
+          },
+          "TN_CONTACT_EMAIL": {
+            "type": "string",
+            "description": "Contact email for User-Agent header",
+            "default": "contacto@traid.agency"
+          }
+        },
+        "required": ["TN_STORE_ID", "TN_ACCESS_TOKEN"]
+      }
+    }
+  ],
+  "tools": [
+    { "name": "list_products", "description": "List products with filters (stock, price, category, date)" },
+    { "name": "get_product", "description": "Product detail by ID or SKU with variants and images" },
+    { "name": "update_product", "description": "Update product attributes and variants (price, stock)" },
+    { "name": "list_orders", "description": "List orders with filters (status, payment, shipping)" },
+    { "name": "get_order", "description": "Full order detail with customer, items, tracking" },
+    { "name": "update_order_status", "description": "Close, open, or cancel an order" },
+    { "name": "list_customers", "description": "List customers with search and filters" },
+    { "name": "get_customer", "description": "Full customer detail with addresses" },
+    { "name": "list_categories", "description": "List categories with parent and handle filters" },
+    { "name": "get_store_info", "description": "Store general settings (plan, domains, currency)" },
+    { "name": "list_coupons", "description": "List discount coupons" },
+    { "name": "create_coupon", "description": "Create percentage, absolute, or shipping coupon" },
+    { "name": "list_webhooks", "description": "List webhooks registered by the app" }
+  ]
+}
